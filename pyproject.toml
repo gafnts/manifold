@@ -15,6 +15,7 @@ xgboost = "^2.1.0"
 mlx = "^0.15.2"
 optuna = "^3.6.1"
 mlflow = "^2.14.1"
+openpyxl = "^3.1.5"
 
 
 [build-system]
