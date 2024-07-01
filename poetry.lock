@@ -347,6 +347,17 @@ files = [
 ]
 
 [[package]]
+name = "et-xmlfile"
+version = "1.1.0"
+description = "An implementation of lxml.xmlfile for the standard library"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "et_xmlfile-1.1.0-py3-none-any.whl", hash = "sha256:a2ba85d1d6a74ef63837eed693bcb89c3f752169b0e3e7ae5b16ca5e1b3deada"},
+    {file = "et_xmlfile-1.1.0.tar.gz", hash = "sha256:8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c"},
+]
+
+[[package]]
 name = "flask"
 version = "3.0.3"
 description = "A simple framework for building complex web applications."
@@ -1020,6 +1031,32 @@ dev = ["pre-commit"]
 testing = ["numpy", "torch"]
 
 [[package]]
+name = "multipledispatch"
+version = "1.0.0"
+description = "Multiple dispatch"
+optional = false
+python-versions = "*"
+files = [
+    {file = "multipledispatch-1.0.0-py3-none-any.whl", hash = "sha256:0c53cd8b077546da4e48869f49b13164bebafd0c2a5afceb6bb6a316e7fb46e4"},
+    {file = "multipledispatch-1.0.0.tar.gz", hash = "sha256:5c839915465c68206c3e9c473357908216c28383b425361e5d144594bf85a7e0"},
+]
+
+[[package]]
+name = "natsort"
+version = "8.4.0"
+description = "Simple yet flexible natural sorting in Python."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "natsort-8.4.0-py3-none-any.whl", hash = "sha256:4732914fb471f56b5cce04d7bae6f164a592c7712e1c85f9ef585e197299521c"},
+    {file = "natsort-8.4.0.tar.gz", hash = "sha256:45312c4a0e5507593da193dedd04abb1469253b601ecaf63445ad80f0a1ea581"},
+]
+
+[package.extras]
+fast = ["fastnumbers (>=2.0.0)"]
+icu = ["PyICU (>=1.0.0)"]
+
+[[package]]
 name = "numpy"
 version = "1.26.4"
 description = "Fundamental package for array computing in Python"
@@ -1073,6 +1110,20 @@ python-versions = ">=3"
 files = [
     {file = "nvidia_nccl_cu12-2.22.3-py3-none-manylinux2014_x86_64.whl", hash = "sha256:f9f5e03c00269dee2cd1aa57019f9a024478a74ae6e9b32d5341c849fe6f6302"},
 ]
+
+[[package]]
+name = "openpyxl"
+version = "3.1.5"
+description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "openpyxl-3.1.5-py2.py3-none-any.whl", hash = "sha256:5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2"},
+    {file = "openpyxl-3.1.5.tar.gz", hash = "sha256:cf0e3cf56142039133628b5acffe8ef0c12bc902d2aadd3e0fe5878dc08d1050"},
+]
+
+[package.dependencies]
+et-xmlfile = "*"
 
 [[package]]
 name = "opentelemetry-api"
@@ -1223,6 +1274,21 @@ spss = ["pyreadstat (>=1.2.0)"]
 sql-other = ["SQLAlchemy (>=2.0.0)", "adbc-driver-postgresql (>=0.8.0)", "adbc-driver-sqlite (>=0.8.0)"]
 test = ["hypothesis (>=6.46.1)", "pytest (>=7.3.2)", "pytest-xdist (>=2.2.0)"]
 xml = ["lxml (>=4.9.2)"]
+
+[[package]]
+name = "pandas-flavor"
+version = "0.6.0"
+description = "The easy way to write your own Pandas flavor."
+optional = false
+python-versions = "*"
+files = [
+    {file = "pandas_flavor-0.6.0-py3-none-any.whl", hash = "sha256:a32c9e2e0da702579320cf2bd0078cee91807713bc9c65ff522f6b0289899893"},
+    {file = "pandas_flavor-0.6.0.tar.gz", hash = "sha256:9fb8735102dcb65dae7ee5cda12b393ca134a909ebcfc0262c5cdc1d79ba007f"},
+]
+
+[package.dependencies]
+pandas = ">=0.23"
+xarray = "*"
 
 [[package]]
 name = "pillow"
@@ -1377,6 +1443,33 @@ files = [
 
 [package.dependencies]
 numpy = ">=1.16.6,<2"
+
+[[package]]
+name = "pyjanitor"
+version = "0.27.0"
+description = "Tools for cleaning pandas DataFrames"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "pyjanitor-0.27.0-py3-none-any.whl", hash = "sha256:762adb744d9e9dde8377b1117f6a2cd1574d4f8d8eaaf4d783d4af7ccb4fa04d"},
+    {file = "pyjanitor-0.27.0.tar.gz", hash = "sha256:f9543eef325a7e139d125adeacb8bb1280d0db8370850f92c0bf39ac3c2fe418"},
+]
+
+[package.dependencies]
+multipledispatch = "*"
+natsort = "*"
+pandas-flavor = "*"
+scipy = "*"
+
+[package.extras]
+all = ["biopython", "black (>=19.3b0)", "darglint", "flake8", "hypothesis (>=4.4.0)", "interrogate", "ipython (>7.31.1)", "isort (>=4.3.18)", "mkdocs", "mkdocs-material", "mkdocstrings (>=0.19.0)", "mkdocstrings-python", "pandas-vet", "pip-tools", "pre-commit", "py (>=1.10.0)", "pyspark", "pytest (>=3.4.2)", "pytest-cov", "pytest-xdist", "tqdm", "unyt"]
+biology = ["biopython"]
+chemistry = ["tqdm"]
+dev = ["black (>=19.3b0)", "darglint", "flake8", "isort (>=4.3.18)", "pip-tools", "pre-commit"]
+docs = ["biopython", "ipython (>7.31.1)", "mkdocs", "mkdocs-material", "mkdocstrings (>=0.19.0)", "mkdocstrings-python", "pyspark", "tqdm", "unyt"]
+engineering = ["unyt"]
+spark = ["pyspark"]
+test = ["hypothesis (>=4.4.0)", "interrogate", "pandas-vet", "py (>=1.10.0)", "pytest (>=3.4.2)", "pytest-cov", "pytest-xdist"]
 
 [[package]]
 name = "pyparsing"
@@ -1943,6 +2036,30 @@ files = [
 ]
 
 [[package]]
+name = "xarray"
+version = "2024.6.0"
+description = "N-D labeled arrays and datasets in Python"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "xarray-2024.6.0-py3-none-any.whl", hash = "sha256:721a7394e8ec3d592b2d8ebe21eed074ac077dc1bb1bd777ce00e41700b4866c"},
+    {file = "xarray-2024.6.0.tar.gz", hash = "sha256:0b91e0bc4dc0296947947640fe31ec6e867ce258d2f7cbc10bedf4a6d68340c7"},
+]
+
+[package.dependencies]
+numpy = ">=1.23"
+packaging = ">=23.1"
+pandas = ">=2.0"
+
+[package.extras]
+accel = ["bottleneck", "flox", "numbagg", "opt-einsum", "scipy"]
+complete = ["xarray[accel,dev,io,parallel,viz]"]
+dev = ["hypothesis", "mypy", "pre-commit", "pytest", "pytest-cov", "pytest-env", "pytest-timeout", "pytest-xdist", "ruff", "xarray[complete]"]
+io = ["cftime", "fsspec", "h5netcdf", "netCDF4", "pooch", "pydap", "scipy", "zarr"]
+parallel = ["dask[complete]"]
+viz = ["matplotlib", "nc-time-axis", "seaborn"]
+
+[[package]]
 name = "xgboost"
 version = "2.1.0"
 description = "XGBoost Python Package"
@@ -1990,4 +2107,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "b65a0a157e7e6d6d8c65bb19649d05360becf365474203e8ad25cc99121679d8"
+content-hash = "0882c506a1b997cc676e9f57e0b4ea184050a12f255d0fef22bd5f75abe2ecf4"
